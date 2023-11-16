@@ -40,8 +40,12 @@ class MAML(nn.Module):
         # Note: to make predictions and to allow for second-order gradients to flow if we want,
         # we use a custom forward function for our network. You can make predictions using
         # preds = self.network(input_data, weights=<the weights you want to use>)
+        
+        preds = self.network(x_supp, weights=self.network.parameters())
+        qury_loss = self.inner_loss(preds, y_supp)
+
 
         if training:
             query_loss.backward() # do not remove this if statement, otherwise it won't train
 
-        raise NotImplementedError()
+        # raise NotImplementedError()
