@@ -1,4 +1,5 @@
 # AML-2
-## Useful link
-
-https://github.com/tristandeleu/pytorch-meta/blob/master/examples/maml-higher/train.py
+## Conda environment activation
+```bash
+conda env create -f environment.yml
+```
